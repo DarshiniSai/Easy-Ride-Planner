@@ -130,44 +130,6 @@ function App() {
 
       {/* The main container for the entire application */}
       <div className="easy-ride-planner-app">
-        {/* Header section with branding and navigation - Adapted for wouter and external links */}
-        <header className="header">
-          {/* Left section: Logo and navigation links */}
-          <div className="left-nav-section">
-            <div className="header-brand">
-              <div className="logo">
-                <span>E</span>
-              </div>
-              <h1 className="logo-text">Easy Ride Planner</h1>
-            </div>
-            
-            <nav>
-              <ul className="nav-list">
-                {/* Links back to the main app (http://localhost:5175/) */}
-                <li><a href="http://localhost:5175/" className="nav-link">Home</a></li>
-                <li><a href="http://localhost:5175/about" className="nav-link">About</a></li>
-                <li><a href="http://localhost:5175/contact" className="nav-link">Contact</a></li>
-                {/* Link to the Planner (this app's root) */}
-                <li><Link to="/" className="nav-link">Planner</Link></li> 
-              </ul>
-            </nav>
-          </div>
-          
-          {/* Right section: Authentication buttons - Now using Clerk's components */}
-          <div className="right-auth-section">
-            <SignedIn>
-              {/* This will display the user's profile picture or initials */}
-              <UserButton afterSignOutUrl="http://localhost:5175/" /> {/* Redirect to main app's home on sign out */}
-            </SignedIn>
-            <SignedOut>
-              {/* These links direct to the main app's Clerk pages for sign-in/sign-up */}
-              <a href="http://localhost:5175/sign-in" className="auth-button">Sign In</a>
-              <a href="http://localhost:5175/sign-up" className="auth-button">Sign Up</a>
-            </SignedOut>
-          </div>
-        </header>
-
-        {/* The Router component now renders below the persistent header */}
         <Router />
         <Toaster />
       </div>
